@@ -74,11 +74,13 @@ const EditorContainer = styled(Box)`
       background-color: #272733;
 
       /* Hover effects for better UX */
-      button, .ql-picker-label {
+      button,
+      .ql-picker-label {
         transition: background-color 0.2s ease;
       }
 
-      button:hover, .ql-picker-label:hover {
+      button:hover,
+      .ql-picker-label:hover {
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 3px;
 
@@ -120,14 +122,27 @@ const EditorContainer = styled(Box)`
       }
 
       /* Only change text color when explicitly modified */
-      .ql-editor p, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor ul, .ql-editor ol {
+      .ql-editor p,
+      .ql-editor h1,
+      .ql-editor h2,
+      .ql-editor h3,
+      .ql-editor h4,
+      .ql-editor h5,
+      .ql-editor h6,
+      .ql-editor ul,
+      .ql-editor ol {
         color: white;
       }
 
       /* Allow color to change only when a specific color class is applied */
-      .ql-editor .ql-color-white, .ql-editor .ql-color-black, .ql-editor .ql-color-red,
-      .ql-editor .ql-color-orange, .ql-editor .ql-color-yellow, .ql-editor .ql-color-green,
-      .ql-editor .ql-color-blue, .ql-editor .ql-color-purple {
+      .ql-editor .ql-color-white,
+      .ql-editor .ql-color-black,
+      .ql-editor .ql-color-red,
+      .ql-editor .ql-color-orange,
+      .ql-editor .ql-color-yellow,
+      .ql-editor .ql-color-green,
+      .ql-editor .ql-color-blue,
+      .ql-editor .ql-color-purple {
         color: inherit;
       }
     }
@@ -193,8 +208,9 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
 
       // Update fonts if provided
       if (customFonts && customFonts.length > 0) {
-        const fontIndex = toolbar.findIndex(item =>
-          Array.isArray(item) && item.some(subItem => (subItem as any).font !== undefined)
+        const fontIndex = toolbar.findIndex(
+          (item) =>
+            Array.isArray(item) && item.some((subItem) => (subItem as any).font !== undefined)
         );
         if (fontIndex >= 0) {
           toolbar[fontIndex] = [{ font: customFonts } as any];
@@ -203,18 +219,23 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
 
       // Update colors if provided
       if (customColors && customColors.length > 0) {
-        const colorIndex = toolbar.findIndex(item =>
-          Array.isArray(item) && item.some(subItem => (subItem as any).color !== undefined)
+        const colorIndex = toolbar.findIndex(
+          (item) =>
+            Array.isArray(item) && item.some((subItem) => (subItem as any).color !== undefined)
         );
         if (colorIndex >= 0) {
-          toolbar[colorIndex] = [{ color: customColors } as any, { background: customColors } as any];
+          toolbar[colorIndex] = [
+            { color: customColors } as any,
+            { background: customColors } as any,
+          ];
         }
       }
 
       // Update font sizes if provided
       if (customFontSizes && customFontSizes.length > 0) {
-        const sizeIndex = toolbar.findIndex(item =>
-          Array.isArray(item) && item.some(subItem => (subItem as any).size !== undefined)
+        const sizeIndex = toolbar.findIndex(
+          (item) =>
+            Array.isArray(item) && item.some((subItem) => (subItem as any).size !== undefined)
         );
         if (sizeIndex >= 0) {
           toolbar[sizeIndex] = [{ size: customFontSizes } as any];

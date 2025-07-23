@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Field,
-  Flex,
-} from '@strapi/design-system';
+import { Box, Field, Flex } from '@strapi/design-system';
 import { useIntl } from 'react-intl';
 import { useField, type InputProps } from '@strapi/strapi/admin';
 import QuillEditor from './QuillEditor';

@@ -121,6 +121,7 @@ module.exports = () => ({
     },
   },
 });
+```
 
 ## Troubleshooting
 
@@ -136,3 +137,4 @@ MIT
 ## Author
 
 Denys Oliinyk <denkison@gmail.com>
+

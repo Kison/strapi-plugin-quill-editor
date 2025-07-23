@@ -1,7 +1,7 @@
 import { PLUGIN_ID } from './pluginId';
 import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
-import { getTranslation } from './utils/getTranslation'
+import { getTranslation } from './utils/getTranslation';
 
 // Define the configuration type
 interface QuillPluginConfig {
