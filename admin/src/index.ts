@@ -1,4 +1,3 @@
-import { getTranslation } from './utils/getTranslation';
 import { PLUGIN_ID } from './pluginId';
 import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
@@ -9,7 +8,7 @@ export default {
     // Register the Quill Editor as a custom field
     app.customFields.register({
       name: 'quill',
-      pluginId: PLUGIN_ID,
+      plugin: PLUGIN_ID,
       type: 'string',
       intlLabel: {
         id: `${PLUGIN_ID}.quill.label`,
