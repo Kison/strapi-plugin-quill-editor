@@ -1,5 +1,5 @@
 {
-  "name": "strapi-plugin-quill-editor",
+  "name": "strapi-plugin-quill-field",
   "version": "1.0.0",
   "keywords": [
     "strapi",
@@ -69,17 +69,17 @@
   },
   "strapi": {
     "kind": "plugin",
-    "name": "quill-editor",
-    "displayName": "Quill Editor",
+    "name": "quill-field",
+    "displayName": "Quill Field",
     "description": "A custom field plugin for Strapi that provides an advanced rich text editor with enhanced formatting options based on Quill"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denkison/strapi-plugin-quill-editor.git"
+    "url": "git+https://github.com/denkison/strapi-plugin-quill-field.git"
   },
-  "homepage": "https://github.com/denkison/strapi-plugin-quill-editor#readme",
+  "homepage": "https://github.com/denkison/strapi-plugin-quill-field#readme",
   "bugs": {
-    "url": "https://github.com/denkison/strapi-plugin-quill-editor/issues"
+    "url": "https://github.com/denkison/strapi-plugin-quill-field/issues"
   },
   "description": "A custom field plugin for Strapi that provides an advanced rich text editor with enhanced formatting options based on Quill",
   "license": "MIT",

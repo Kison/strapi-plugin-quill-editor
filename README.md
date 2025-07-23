@@ -1,4 +1,4 @@
-# Quill Editor for Strapi
+# Quill Field for Strapi
 
 A custom field plugin for Strapi that provides an advanced rich text editor with enhanced formatting options. This plugin replaces the default Strapi editor with a Quill-based editor that supports font families, font sizes, colors, and more.
 
@@ -23,10 +23,10 @@ A custom field plugin for Strapi that provides an advanced rich text editor with
 
 ```bash
 # Using npm
-npm install strapi-plugin-quill-editor
+npm install strapi-plugin-quill-field
 
 # Using yarn
-yarn add strapi-plugin-quill-editor
+yarn add strapi-plugin-quill-field
 ```
 
 After installing the package, you need to enable the plugin in your Strapi configuration:
@@ -36,9 +36,9 @@ After installing the package, you need to enable the plugin in your Strapi confi
 
 ```js
 module.exports = () => ({
-  'quill-editor': {
+  'quill-field': {
     enabled: true,
-    resolve: './src/plugins/quill-editor',
+    resolve: './src/plugins/quill-field',
   },
 });
 ```
@@ -47,11 +47,11 @@ module.exports = () => ({
 
 ## Usage
 
-Once installed and enabled, the Quill Editor will be available as a custom field type in the Content-Type Builder:
+Once installed and enabled, the Quill Field will be available as a custom field type in the Content-Type Builder:
 
 1. Go to the Content-Type Builder in your Strapi admin panel
 2. Create a new field or edit an existing one
-3. In the field type selection, look for "Rich Text (Quill)" under the Custom section
+3. In the field type selection, look for "Rich Text (Quill Field)" under the Custom section
 4. Configure the field as needed (name, required status, etc.)
 5. Save your changes
 
@@ -73,10 +73,10 @@ If you want to contribute to this plugin or modify it for your own needs:
 
 ```bash
 # Clone the repository
-git clone https://github.com/denkison/strapi-plugin-quill-editor.git
+git clone https://github.com/denkison/strapi-plugin-quill-field.git
 
 # Install dependencies
-cd strapi-plugin-quill-editor
+cd strapi-plugin-quill-field
 npm install
 
 # Build the plugin

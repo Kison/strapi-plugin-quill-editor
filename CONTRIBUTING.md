@@ -1,6 +1,6 @@
-# Contributing to Strapi Plugin Quill Editor
+# Contributing to Strapi Plugin Quill Field
 
-Thank you for considering contributing to the Strapi Plugin Quill Editor! This document outlines the guidelines for contributing to this project.
+Thank you for considering contributing to the Strapi Plugin Quill Field! This document outlines the guidelines for contributing to this project.
 
 ## Code of Conduct
 
@@ -51,10 +51,10 @@ Enhancement suggestions are tracked as GitHub issues. When you are creating an e
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/strapi-plugin-quill-editor.git
+git clone https://github.com/YOUR_USERNAME/strapi-plugin-quill-field.git
 
 # Install dependencies
-cd strapi-plugin-quill-editor
+cd strapi-plugin-quill-field
 npm install
 
 # Build the plugin
