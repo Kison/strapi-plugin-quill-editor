@@ -39,18 +39,97 @@ const defaultFormats = [
 // Styled component for the editor container
 const EditorContainer = styled(Box)`
   .quill {
-    border: 1px solid #dcdce4;
+    border: 1px solid #4a4a6a !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 4px rgba(33, 33, 52, 0.1);
 
     .ql-toolbar {
-      border-bottom: 1px solid #dcdce4;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
+      border: none !important;
+      border-bottom: 1px solid #4a4a6a !important;
+      border-top-left-radius: 4px !important;
+      border-top-right-radius: 4px !important;
+
+      /* Make toolbar icons white */
+      .ql-stroke {
+        stroke: white;
+      }
+      .ql-fill {
+        fill: white;
+      }
+      .ql-picker {
+        color: white;
+
+        .ql-picker-label {
+          color: white;
+        }
+      }
+      .ql-picker-options {
+        background-color: #272733;
+
+        .ql-picker-item {
+          color: white;
+        }
+      }
+      /* Background color for toolbar */
+      background-color: #272733;
+
+      /* Hover effects for better UX */
+      button, .ql-picker-label {
+        transition: background-color 0.2s ease;
+      }
+
+      button:hover, .ql-picker-label:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+
+        /* Ensure colors don't change on hover */
+        .ql-stroke {
+          stroke: white;
+        }
+        .ql-fill {
+          fill: white;
+        }
+        color: white;
+      }
+
+      /* Style for active buttons to keep them white */
+      .ql-active {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+
+        .ql-stroke {
+          stroke: white !important;
+        }
+        .ql-fill {
+          fill: white !important;
+        }
+        color: white !important;
+      }
     }
 
     .ql-container {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px !important;
+      border-bottom-right-radius: 4px !important;
       min-height: 300px;
+      border: none !important;
+      border-top: none !important;
+
+      .ql-editor {
+        color: white; /* Default text color should be white */
+        font-size: 14px;
+      }
+
+      /* Only change text color when explicitly modified */
+      .ql-editor p, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor ul, .ql-editor ol {
+        color: white;
+      }
+
+      /* Allow color to change only when a specific color class is applied */
+      .ql-editor .ql-color-white, .ql-editor .ql-color-black, .ql-editor .ql-color-red,
+      .ql-editor .ql-color-orange, .ql-editor .ql-color-yellow, .ql-editor .ql-color-green,
+      .ql-editor .ql-color-blue, .ql-editor .ql-color-purple {
+        color: inherit;
+      }
     }
   }
 `;
