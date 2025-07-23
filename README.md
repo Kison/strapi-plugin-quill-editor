@@ -51,8 +51,7 @@ Once installed and enabled, the Quill Field will be available as a custom field 
 1. Go to the Content-Type Builder in your Strapi admin panel
 2. Create a new field or edit an existing one
 3. In the field type selection, look for "Rich Text (Quill Field)" under the Custom section
-4. Configure the field as needed (name, required status, etc.)
-5. Save your changes
+4. Save your changes
 
 When editing content, the field will now use the Quill editor instead of the default Strapi editor, providing access to all the enhanced formatting options.
 
