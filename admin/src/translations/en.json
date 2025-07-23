@@ -1,0 +1,6 @@
+{
+  "plugin.name": "Quill Editor",
+  "plugin.description": "Advanced rich text editor with formatting options",
+  "quill.label": "Rich Text (Quill)",
+  "quill.description": "Advanced rich text editor with formatting options"
+}
