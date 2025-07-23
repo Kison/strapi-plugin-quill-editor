@@ -17,7 +17,7 @@ A custom field plugin for Strapi that provides an advanced rich text editor with
 ## Requirements
 
 - Strapi v5.18.1 or higher
-- Node.js 18.x or higher
+- Node.js 22.x or higher
 
 ## Installation
 
@@ -38,7 +38,6 @@ After installing the package, you need to enable the plugin in your Strapi confi
 module.exports = () => ({
   'quill-field': {
     enabled: true,
-    resolve: './src/plugins/quill-field',
   },
 });
 ```
@@ -67,24 +66,12 @@ The Quill editor comes pre-configured with a comprehensive toolbar that includes
 - Field descriptions
 - Internationalization (i18n)
 
-## Development
+## Troubleshooting
 
-If you want to contribute to this plugin or modify it for your own needs:
-
-```bash
-# Clone the repository
-git clone https://github.com/denkison/strapi-plugin-quill-field.git
-
-# Install dependencies
-cd strapi-plugin-quill-field
-npm install
-
-# Build the plugin
-npm run build
-
-# Watch for changes during development
-npm run watch
-```
+- If you encounter issues with the plugin not being recognized, ensure your Strapi version is compatible (v5.18.1 or higher)
+- Check that the plugin is properly enabled in your `plugins.js` configuration
+- Clear your browser cache and restart the Strapi server
+- Verify that the plugin is correctly installed by checking `node_modules/strapi-plugin-quill-field`
 
 ## License
 
