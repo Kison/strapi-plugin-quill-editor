@@ -3,6 +3,18 @@ import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
 import { getTranslation } from './utils/getTranslation'
 
+// Define the configuration type
+interface QuillPluginConfig {
+  customModules?: Record<string, any>;
+  customFormats?: string[];
+  customFonts?: string[];
+  customColors?: string[];
+  customFontSizes?: Array<string | boolean>;
+}
+
+// Store the plugin configuration
+let pluginConfig: QuillPluginConfig = {};
+
 export default {
   register(app: any) {
     // Register the Quill Editor as a custom field
@@ -20,10 +32,19 @@ export default {
       },
       icon: PluginIcon,
       components: {
-        Input: async () =>
-          import('./components/QuillFieldInput').then((module) => ({
-            default: module.QuillFieldInput,
-          })),
+        Input: async () => {
+          const module = await import('./components/QuillFieldInput');
+          // Create a component that passes the configuration to QuillFieldInput
+          const ConfiguredQuillFieldInput = (props: any) => {
+            return module.QuillFieldInput({
+              ...props,
+              ...pluginConfig,
+            });
+          };
+          return {
+            default: ConfiguredQuillFieldInput,
+          };
+        },
       },
     });
 
@@ -33,6 +54,13 @@ export default {
       isReady: false,
       name: PLUGIN_ID,
     });
+  },
+
+  // Method to configure the plugin
+  bootstrap(app: any) {
+    // Get the plugin configuration from the app
+    const config = app.getPlugin(PLUGIN_ID)?.configuration || {};
+    pluginConfig = config;
   },
 
   async registerTrads({ locales }: { locales: string[] }) {

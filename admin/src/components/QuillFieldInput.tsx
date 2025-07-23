@@ -11,6 +11,12 @@ import { PLUGIN_ID } from '../pluginId';
 
 type QuillFieldInputProps = InputProps & {
   labelAction?: React.ReactNode;
+  // Custom configuration options
+  customModules?: Record<string, any>;
+  customFormats?: string[];
+  customFonts?: string[];
+  customColors?: string[];
+  customFontSizes?: Array<string | boolean>;
 };
 
 export const QuillFieldInput = ({
@@ -20,6 +26,11 @@ export const QuillFieldInput = ({
   labelAction,
   required = false,
   disabled = false,
+  customModules,
+  customFormats,
+  customFonts,
+  customColors,
+  customFontSizes,
 }: QuillFieldInputProps) => {
   const { formatMessage } = useIntl();
   const field = useField(name);
@@ -44,6 +55,11 @@ export const QuillFieldInput = ({
             onChange={(e) => field.onChange(name, e.target.value)}
             disabled={disabled}
             error={error}
+            customModules={customModules}
+            customFormats={customFormats}
+            customFonts={customFonts}
+            customColors={customColors}
+            customFontSizes={customFontSizes}
           />
         </Box>
 

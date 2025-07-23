@@ -66,6 +66,63 @@ The Quill editor comes pre-configured with a comprehensive toolbar that includes
 - Field descriptions
 - Internationalization (i18n)
 
+### Customizing Fonts, Colors, and Font Sizes
+
+You can customize the fonts, colors, and font sizes available in the Quill editor by adding configuration options to your Strapi plugin configuration:
+
+```js
+// ./config/plugins.js
+module.exports = () => ({
+  'quill-field': {
+    enabled: true,
+    config: {
+      // Custom fonts to use in the editor
+      customFonts: ['Arial', 'Courier', 'Garamond', 'Tahoma', 'Times New Roman', 'Verdana'],
+
+      // Custom colors for text and background
+      customColors: ['#000000', '#e60000', '#ff9900', '#ffff00', '#008a00', '#0066cc', '#9933ff', '#ffffff', '#facccc', '#ffebcc'],
+
+      // Custom font sizes
+      customFontSizes: ['small', false, 'large', 'huge', '20px', '30px'],
+
+      // Custom formats (completely replaces the default formats)
+      customFormats: [
+        'header',
+        'font',
+        'size',
+        'bold',
+        'italic',
+        'underline',
+        'strike',
+        'color',
+        'background',
+        'list',
+        'bullet',
+        'align',
+        'link',
+        'image',
+      ],
+
+      // Custom modules (advanced configuration)
+      customModules: {
+        // This will be merged with the default modules
+        // You can provide a complete toolbar configuration here
+        toolbar: [
+          [{ header: [1, 2, 3, 4, 5, 6, false] }],
+          [{ font: [] }],
+          [{ size: [] }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{ color: [] }, { background: [] }],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          [{ align: [] }],
+          ['link', 'image'],
+          ['clean'],
+        ],
+      },
+    },
+  },
+});
+
 ## Troubleshooting
 
 - If you encounter issues with the plugin not being recognized, ensure your Strapi version is compatible (v5.18.1 or higher)
