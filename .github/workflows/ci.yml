@@ -25,4 +25,5 @@ jobs:
       - run: npm run build
       - run: npm run test:ts:front
       - run: npm run test:ts:back
+      - run: npx prettier --version
       - run: npx prettier --check .
