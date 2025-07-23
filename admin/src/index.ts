@@ -1,26 +1,29 @@
 import { PLUGIN_ID } from './pluginId';
 import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
-import QuillField from './components/QuillField';
+import { getTranslation } from './utils/getTranslation'
 
 export default {
   register(app: any) {
     // Register the Quill Editor as a custom field
     app.customFields.register({
       name: 'quill',
-      plugin: PLUGIN_ID,
+      pluginId: PLUGIN_ID,
       type: 'string',
       intlLabel: {
-        id: `${PLUGIN_ID}.quill.label`,
+        id: getTranslation('quill.label'),
         defaultMessage: 'Rich Text (Quill)',
       },
       intlDescription: {
-        id: `${PLUGIN_ID}.quill.description`,
+        id: getTranslation('quill.description'),
         defaultMessage: 'Advanced rich text editor with formatting options',
       },
       icon: PluginIcon,
       components: {
-        Input: QuillField,
+        Input: async () =>
+          import('./components/QuillFieldInput').then((module) => ({
+            default: module.QuillFieldInput,
+          })),
       },
     });
 
