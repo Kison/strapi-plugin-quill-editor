@@ -32,7 +32,6 @@ const QuillField: React.FC<QuillFieldProps> = ({
   disabled = false,
   error = '',
   description,
-  attribute,
 }) => {
   const { formatMessage } = useIntl();
   const labelId = `${name}-label`;
@@ -40,17 +39,16 @@ const QuillField: React.FC<QuillFieldProps> = ({
   const errorId = `${name}-error`;
 
   return (
-    <Field
-      name={name}
-      id={name}
-      error={error}
-      hint={description && formatMessage(description)}
-    >
+    <Field name={name} id={name} error={error} hint={description && formatMessage(description)}>
       <Box>
         <Box paddingBottom={1}>
           <Typography variant="pi" fontWeight="bold" textColor="neutral800" id={labelId}>
             {formatMessage(intlLabel)}
-            {required && <Typography textColor="danger600" fontWeight="bold" as="span">*</Typography>}
+            {required && (
+              <Typography textColor="danger600" fontWeight="bold" as="span">
+                *
+              </Typography>
+            )}
           </Typography>
         </Box>
         <Box paddingBottom={1}>
@@ -64,12 +62,16 @@ const QuillField: React.FC<QuillFieldProps> = ({
         </Box>
         {description && (
           <Box paddingBottom={1}>
-            <Typography variant="pi" id={hintId}>{formatMessage(description)}</Typography>
+            <Typography variant="pi" id={hintId}>
+              {formatMessage(description)}
+            </Typography>
           </Box>
         )}
         {error && (
           <Box>
-            <Typography variant="pi" textColor="danger600" id={errorId}>{error}</Typography>
+            <Typography variant="pi" textColor="danger600" id={errorId}>
+              {error}
+            </Typography>
           </Box>
         )}
       </Box>

@@ -36,9 +36,9 @@ After installing the package, you need to enable the plugin in your Strapi confi
 
 ```js
 module.exports = () => ({
-  "quill-editor": {
+  'quill-editor': {
     enabled: true,
-    resolve: "./src/plugins/quill-editor",
+    resolve: './src/plugins/quill-editor',
   },
 });
 ```

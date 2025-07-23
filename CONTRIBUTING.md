@@ -97,11 +97,11 @@ All JavaScript code is linted with Prettier and should follow the project's esta
 
 This section lists the labels we use to help us track and manage issues and pull requests.
 
-* `bug` - Issues that are bugs
-* `documentation` - Issues or PRs related to documentation
-* `enhancement` - Issues that are feature requests or PRs that implement new features
-* `good first issue` - Good for newcomers
-* `help wanted` - Extra attention is needed
+- `bug` - Issues that are bugs
+- `documentation` - Issues or PRs related to documentation
+- `enhancement` - Issues that are feature requests or PRs that implement new features
+- `good first issue` - Good for newcomers
+- `help wanted` - Extra attention is needed
 
 ## Thank You!
 

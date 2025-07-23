@@ -1,7 +1,15 @@
 {
   "name": "strapi-plugin-quill-editor",
   "version": "1.0.0",
-  "keywords": ["strapi", "plugin", "editor", "quill", "rich-text", "wysiwyg", "strapi-plugin"],
+  "keywords": [
+    "strapi",
+    "plugin",
+    "editor",
+    "quill",
+    "rich-text",
+    "wysiwyg",
+    "strapi-plugin"
+  ],
   "type": "commonjs",
   "exports": {
     "./package.json": "./package.json",
