@@ -5,3 +5,4 @@ package-lock.json
 .git
 .github
 server/src/**/*.js
+README.md
